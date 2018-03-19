@@ -5,15 +5,17 @@ python:
 - '3.4'
 - '3.5'
 - '3.6'
-- '3.7'
 
 before_install:
-- if [ $TRAVIS_TAG ]; then if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install pandoc; else brew install
+- if [ "$TRAVIS_TAG" != "" ]; then if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install pandoc; else brew install
   pandoc; fi; pip install pypandoc; fi
 
 install:
 - pip wheel --no-deps --wheel-dir=./dist .
 - pip install dist/*.whl
+
+after_install:
+- pip install ddt
 
 script: python -m unittest discover -s test
 
