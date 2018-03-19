@@ -1,6 +1,11 @@
 # Jamotools
 
 [![Build Status](https://travis-ci.org/HaebinShin/jamotools.svg?branch=master)](https://travis-ci.org/HaebinShin/jamotools)
+[![GitHub Tag](https://img.shields.io/github/tag/HaebinShin/jamotools.svg?label=github+tag)](https://github.com/HaebinShin/jamotools/tags)
+[![PyPI version](https://img.shields.io/pypi/v/jamotools.svg)](https://pypi.python.org/pypi/jamotools/)
+[![Python version](https://img.shields.io/pypi/pyversions/jamotools.svg)](https://pypi.python.org/pypi/jamotools/)
+[![License](https://img.shields.io/pypi/l/jamotools.svg)](https://github.com/HaebinShin/jamotools/blob/master/LICENSE)
+
 
 A library for Korean Jamo split and vectorize.
 
