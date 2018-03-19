@@ -1,6 +1,6 @@
 from setuptools import setup
 import os
-if os.environ.get("TRAVIS_TAG", None) == None:
+if len(os.environ.get("TRAVIS_TAG", ""))==0:
     long_description = ""
 else:
     import pypandoc
