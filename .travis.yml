@@ -1,0 +1,26 @@
+language: python
+
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+- '3.7'
+
+before_install:
+- if [ $TRAVIS_TAG ]; then if [ $TRAVIS_OS_NAME = linux ]; then sudo apt-get install pandoc; else brew install
+  pandoc; fi; pip install pypandoc; fi
+
+install:
+- pip wheel --no-deps --wheel-dir=./dist .
+- pip install dist/*.whl
+
+script: python -m unittest discover -s test
+
+deploy:
+  provider: pypi
+  user: HaebinShin
+  password:
+    secure: ks73VCZEU2aFndddE7P14ZJbV8CHDW7rpl9SmIy8YdAWvtDJMQ6s9q6KO/wnl/+66Som0Dc2/TIkVEhuo23eJXloprxDIVocsQgmgWGjGlO+H9RMMqgIFX0DLCd3WtNBlUI81fZALU50ozB+ub9FEdwCIHVWT/p+zSPs9uwhGPVTl6DjBBT1fnzp4JxwNm4Re8jqM2LlwfWiXpOsWhVwp9ebYmJ7TS5Av4avJRqCKUUDY3Jsn3BBuAETJoSB8Fs2gAzz8DFX900atTCdV7oYeOGmVNtH6maEz2sFnuzlwIIaHE5k+yzVJxwRfsIMPFhcCbhV7DcP1N9QMQLywPjfjOZfnVfg3xsH/C3oEenkDgxV4nQVOBEERvSFNDKd6dhNsfQR9otYmO1G+Y1tO7Wu6MOcqqTtaHP915Cnb0ixIDLmf+BtW1Kgu6IBmqTvV3QY8iuPzMsdBjNx2Ye1t/hC4qiRxE6D1p11Fx5fs4Yvf0ydIqT2JoG74/A2R+AWHIKUx3URUx6zjAo7wtP7s8dC29hvxgHMPfMwtvtvuCoq/TAvSs3KKQEKSeK/s9bI1GYzwHzOBMabiTKVQ1NgvLKU5gLpUpfkiIEgLIbez76hhaWatNuwXrjLF7io96eCmmFDarrDqCFgAEMitlFQ3lvdEzISh4PFUm+KXRwuiwHCRBE=
+  on:
+    tags: true

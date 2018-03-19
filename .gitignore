@@ -1,0 +1,9 @@
+.vscode/
+
+.tox/
+*.egg-info/
+
+__pycache__/
+*.pyc
+
+dist/

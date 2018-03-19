@@ -1,0 +1,17 @@
+{
+    "jamo": {
+        "input": "안",
+        "output": ["0x110b", "0x1161", "0x11ab"],
+        "jamo_type": "JAMO"
+    },
+    "compat": {
+        "input": "안",
+        "output": ["0x3147", "0x314F", "0x3134"],
+        "jamo_type": "COMPAT"
+    },
+    "halfwidth": {
+        "input": "안",
+        "output": ["0xffb7", "0xffc2", "0xffa4"],
+        "jamo_type": "HALFWIDTH"
+    }
+}
