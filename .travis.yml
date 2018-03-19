@@ -30,4 +30,4 @@ deploy:
   on:
     tags: true
     python: '3.6'
-  distributions: bdist_wheel
+  distributions: bdist_wheel sdist
