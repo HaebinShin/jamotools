@@ -1,5 +1,7 @@
 # Jamotools
 
+[![Build Status](https://travis-ci.org/HaebinShin/jamotools.svg?branch=master)](https://travis-ci.org/HaebinShin/jamotools)
+
 A library for Korean Jamo split and vectorize.
 
 ## Install
