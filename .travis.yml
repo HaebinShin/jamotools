@@ -30,5 +30,5 @@ deploy:
   on:
     tags: true
     python: '3.6'
-    skip_cleanup: true
+  skip_cleanup: true
   distributions: bdist_wheel sdist
