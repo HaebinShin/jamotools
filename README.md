@@ -49,7 +49,7 @@ API for split syllables and join jamos to syllable is based on [hangul-utils][ha
  - `join_jamos`: Converts a string of jamos to a string of syllables.
  - `normalize_to_compat_jamo`: Normalize a string of jamos to a string of *Hangul Compatibility Jamo*.
 
-```sh
+```py
 >>> import jamotools
 >>> print(jamotools.split_syllable_char(u"안"))
 ('ㅇ', 'ㅏ', 'ㄴ')
@@ -78,7 +78,7 @@ True
 
 Jamotools' API supports multiple unicode area of Hangul Jamo for manipulating. Also consists of additional API for manipulating Korean jamo.
 
-```sh
+```py
 >>> sentence = u"자모"
 
 >>> jamos1 = jamotools.split_syllables(sentence, jamo_type="JAMO")
@@ -119,7 +119,7 @@ Jamotools support vectorize function following RULE. Each RULE is defined how sp
 
 - `Vectorizationer`: Class for vectorize text by Rule and pad.
 
-```sh
+```py
 >>> v = jamotools.Vectorizationer(rule=jamotools.rules.RULE_1, \
                                   max_length=None, \
                                   prefix_padding_size=0)
@@ -127,8 +127,24 @@ Jamotools support vectorize function following RULE. Each RULE is defined how sp
 [13, 21, 45,  4, 27, 62]
 ```
 
+### Custom RULE
+Jamotools can add user's custom RULE class as following steps.
+
+1. Make custom RULE class which inherit RuleBase (e.g. Rule2) in [rules.py][rules_py] like Rule1.
+2. Add constant for custom RULE like [RULE_1][rule_constant].
+3. Modify [get_rule][get_rule_function] function to return custom RULE class.
+
+Then it can be use as same as RULE_1 usage.
+```py
+>>> v = jamotools.Vectorizationer(rule=jamotools.rules.RULE_2, \
+                                  max_length=None, \
+                                  prefix_padding_size=0)
+```
 
 [jamo_unicode]: http://unicode.org/charts/PDF/U1100.pdf
 [compat_unicode]: http://unicode.org/charts/PDF/U3130.pdf
 [halfwidth_unicode]: http://unicode.org/charts/PDF/UFF00.pdf
 [hangul_utils_apis]: https://github.com/kaniblu/hangul-utils/blob/master/README.md#manipulating-korean-characters
+[rules_py]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py
+[rule_constant]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py#L39-L41
+[get_rule_function]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py#L53-L54
