@@ -7,7 +7,7 @@ else:
     long_description = pypandoc.convert('README.md', 'rst')
 
 
-__VERSION__ = "0.1.6"
+__VERSION__ = "0.1.7"
 
 requirements = [
     "numpy",
