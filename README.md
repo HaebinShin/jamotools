@@ -145,6 +145,6 @@ Then it can be use as same as RULE_1 usage.
 [compat_unicode]: http://unicode.org/charts/PDF/U3130.pdf
 [halfwidth_unicode]: http://unicode.org/charts/PDF/UFF00.pdf
 [hangul_utils_apis]: https://github.com/kaniblu/hangul-utils/blob/master/README.md#manipulating-korean-characters
-[rules_py]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py
-[rule_constant]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py#L39-L41
-[get_rule_function]: https://github.com/HaebinShin/jamotools/blob/master/jamotools/vector/rules.py#L53-L54
+[rules_py]: https://github.com/HaebinShin/jamotools/blob/master/src/vector/rules.py
+[rule_constant]: https://github.com/HaebinShin/jamotools/blob/master/src/vector/rules.py#L39-L41
+[get_rule_function]: https://github.com/HaebinShin/jamotools/blob/master/src/vector/rules.py#L53-L54
