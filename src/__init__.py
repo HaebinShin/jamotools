@@ -11,3 +11,5 @@ __all__ = [
     'split_syllables', 'join_jamos', \
     'Vectorizationer', 'rules'
 ]
+
+__version__ = "0.1.7"

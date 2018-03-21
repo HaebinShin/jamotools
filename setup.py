@@ -1,4 +1,5 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+import src
 import os
 if len(os.environ.get("TRAVIS_TAG", ""))==0:
     long_description = ""
@@ -7,8 +8,6 @@ else:
     long_description = pypandoc.convert('README.md', 'rst')
 
 
-__VERSION__ = "0.1.7"
-
 requirements = [
     "numpy",
     "six",
@@ -16,7 +15,7 @@ requirements = [
 ]
 
 setup(name='jamotools',
-    version=__VERSION__,
+    version=src.__version__,
     description='A library for Korean Jamo split and vectorize.',
     long_description=long_description,
     classifiers=[
@@ -38,5 +37,6 @@ setup(name='jamotools',
     author_email='sunsal0704@gmail.com',
     license='GPL',
     install_requires=requirements,
-    packages=['jamotools'],
+    packages=['jamotools', 'jamotools.jamo', 'jamotools.vector'],
+    package_dir={'jamotools': 'src'},
     zip_safe=False)
